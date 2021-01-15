@@ -24,5 +24,6 @@ pnpm-debug.log*
 .
 
 #rc files
-src/.prettierrc.js
-stc/config.js
+src/
+.prettierrc.js
+config.js
