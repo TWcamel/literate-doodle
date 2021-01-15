@@ -12,7 +12,7 @@
                 {{ repo.description }}
             </p>
             <a id="Url" :href="repo.html_url">🔗 {{ repo.html_url }}</a>
-            <p id="UpdateTime">
+            <p id="UpdateTime" >
                 🕘 {{ repo.updated_at.replace(/T/i, " ⬆ ").split("Z")[0] }}
             </p>
         </div>
