@@ -4,8 +4,7 @@
         :style="{
             background: coverImg
         }"
-    >
-    </div>
+    ></div>
 </template>
 
 <script>
@@ -24,5 +23,11 @@ export default {
     height: 50em;
     background-position: center !important;
     background-size: cover !important;
+}
+
+@media screen and (max-width: 900px) {
+    #CoverImg {
+        width: var(--RWDViewWidth);
+    }
 }
 </style>

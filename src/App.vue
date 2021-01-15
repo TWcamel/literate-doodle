@@ -17,7 +17,7 @@ export default {
     --bgcolorFist: #255ba0;
     --bgcolorSecond: #dddbd7;
     --mainPageViewWidth: 100vw;
-    --sideNavViewWidth: 8em;
+    --RWDViewWidth: 200vw;
 }
 
 #app {
@@ -29,5 +29,11 @@ export default {
     text-align: center;
     color: #2c3e50;
     background-color: var(--bgcolorSecond);
+}
+
+@media screen and (max-width: 900px) {
+    #app {
+        width: var(--RWDViewWidth);
+    }
 }
 </style>

@@ -28,6 +28,7 @@ export default {
     right: 0;
     font: normal "Titillium Web", sans-serif;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 #SideNav >>> li a {
@@ -54,6 +55,7 @@ export default {
         width: 100vh;
         height: auto;
         position: relative;
+        padding-left: 50vw;
     }
 
     #SideNav >>> li a {
@@ -62,10 +64,10 @@ export default {
     }
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
     #SideNav >>> li a {
         text-align: center;
         float: none;
-    }
-}
+    } */
+/* } */
 </style>

@@ -1,8 +1,8 @@
 <template>
     <div id="Profolio">
         <parallax-container />
-        <landing-title/>
-        <about-me/>
+        <landing-title />
+        <about-me />
         <cover-img />
 
         <div id="Repo" v-for="(repo, idx) in repos" :key="idx">
@@ -22,14 +22,14 @@
 import ParallaxContainer from "../components/ParallaxContainer"
 import CoverImg from "../components/CoverImg"
 import repoService from "../services/repoService"
-import LandingTitle from '../components/LandingTitle.vue'
-import AboutMe from '../components/AboutMe.vue'
+import LandingTitle from "../components/LandingTitle.vue"
+import AboutMe from "../components/AboutMe.vue"
 import config from "../config.js"
 
 export default {
     data() {
         return {
-            repos: [],
+            repos: []
         }
     },
     components: { ParallaxContainer, CoverImg, LandingTitle, AboutMe },
@@ -102,7 +102,15 @@ export default {
     color: grey;
 }
 
+@media screen and (max-width: 501px) {
+    #Repo {
+        padding: 10px 100px;
+    }
+}
 
-
-
+@media screen and (max-width: 356px) { 
+    #Repo {
+        padding: 10px 60px;
+    }
+}
 </style>

@@ -70,12 +70,6 @@ export default {
 </script>
 
 <style scoped>
-/* #Parallax {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-} */
-
 #ParallaxContainer {
     width: var(--mainPageViewWidth);
     height: 900px;
@@ -118,5 +112,14 @@ export default {
 .Parallax-item {
     position: absolute;
     will-change: transform;
+}
+
+@media screen and (max-width: 900px) {
+    #ParallaxContainer {
+        width: var(--RWDViewWidth);
+    }
+    #ParallaxContainer div {
+        width: var(--RWDViewWidth);
+    }
 }
 </style>
