@@ -2,13 +2,7 @@
     <div id="Profolio">
         <parallax-container />
         <landing-title/>
-
-        <div id="About">
-            <img id="Avatar" :src="avatar" />
-            <h1 id="Stroke">{{ title }}</h1>
-            <h2 id="Info" v-for="(item, idx) in info" :key="idx">{{ item }}</h2>
-        </div>
-
+        <about-me/>
         <cover-img />
 
         <div id="Repo" v-for="(repo, idx) in repos" :key="idx">
@@ -29,19 +23,16 @@ import ParallaxContainer from "../components/ParallaxContainer"
 import CoverImg from "../components/CoverImg"
 import repoService from "../services/repoService"
 import LandingTitle from '../components/LandingTitle.vue'
+import AboutMe from '../components/AboutMe.vue'
 import config from "../config.js"
 
 export default {
     data() {
         return {
             repos: [],
-            title: "Responsive Example",
-            avatar:
-                "https://avatars2.githubusercontent.com/u/10137?s=460&u=b1951d34a583cf12ec0d3b0781ba19be97726318&v=4",
-            info: "Info Example"
         }
     },
-    components: { ParallaxContainer, CoverImg, LandingTitle },
+    components: { ParallaxContainer, CoverImg, LandingTitle, AboutMe },
     methods: {
         async updateRepos() {
             try {
@@ -59,11 +50,6 @@ export default {
                 console.error(e)
             }
         },
-        async updatePersonenlData() {
-            this.title = config.USER_NAME.toUpperCase()
-            this.avatar = config.USER_AVATAR
-            this.info = config.USER_INFO
-        },
         async sortArr(ele) {
             return ele
                 .sort((a, b) => a.stargazers_count - b.stargazers_count)
@@ -72,7 +58,6 @@ export default {
     },
     async created() {
         await this.updateRepos()
-        await this.updatePersonenlData()
     }
 }
 </script>
@@ -103,7 +88,7 @@ export default {
     word-break: break-all;
 }
 
-#Description {
+#Repo >>> #Description {
     font: normal 1em sans-serif;
     background-color: #fff;
     box-shadow: #5e5858b7 0px 0px 12px 0px;
@@ -112,45 +97,12 @@ export default {
     border-radius: 6px;
 }
 
-#Url {
+#Repo >>> #Url {
     text-decoration: none;
     color: grey;
 }
 
-#Stroke {
-    padding: 0.3em;
-    font-size: 3em;
-    -webkit-text-stroke: 3px rgb(243, 228, 160);
-    -webkit-text-fill-color: white;
-    -webkit-animation: fill 0.8s infinite alternate;
-    border-radius: 8px;
-}
 
-@-webkit-keyframes fill {
-    from {
-        -webkit-text-fill-color: rgb(74, 155, 221);
-    }
-    to {
-        -webkit-text-fill-color: rgb(61, 75, 88);
-    }
-}
-
-#About {
-    justify-content: center;
-    align-items: center;
-    display: block;
-    width: 100vw;
-    background-color: var(--bgcolorFist);
-}
-
-#Avatar {
-    width: 8em;
-    /* padding-right: 2em; */
-}
-
-#Info {
-    color: rgb(172, 172, 172);
-}
 
 
 </style>
