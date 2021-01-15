@@ -4,7 +4,7 @@ import Router from "vue-router"
 Vue.use(Router)
 
 import MainPage from "@/pages/MainPage.vue"
-import ParallaxContainer from "@/components/ParallaxContainer.vue"
+import Profolio from "@/pages/Profolio.vue"
 
 export const router = new Router({
     mode: "history",
@@ -19,8 +19,8 @@ export const router = new Router({
             children: [
                 {
                     path: "/",
-                    name: "parallax-container",
-                    component: ParallaxContainer
+                    name: "profolio",
+                    component: Profolio
                 }
             ]
         }
