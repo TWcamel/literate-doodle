@@ -1,7 +1,7 @@
 <template>
     <div>
         <parallax-container />
-
+        <cover-img />
         <div
             style="height:1000px; margin-top:3em; background-color:red;font-size:36px"
         >
@@ -14,8 +14,9 @@
 
 <script>
 import ParallaxContainer from "../components/ParallaxContainer"
+import CoverImg from "../components/CoverImg"
 
 export default {
-    components: { ParallaxContainer }
+    components: { ParallaxContainer, CoverImg }
 }
 </script>

@@ -22,26 +22,15 @@ export default {
             ]
         }
     },
-    created() {
-        window.addEventListener("scroll", this.handleScroll, {
-            capture: false,
-            passive: true
-        })
+    mounted() {
+        this.stopListenOutOfDom()
     },
     destroy() {
         window.removeEventListener("scroll", this.handleScroll)
     },
-    mounted() {
-        console.info(
-            document
-                .querySelector("#ParallaxContainer")
-                .getElementsByTagName("div")[1]
-                .style.getPropertyValue("transform")
-        )
-    },
     methods: {
         handleScroll(event) {
-            let parent = document.querySelector("#ParallaxContainer")
+            const parent = document.querySelector("#ParallaxContainer")
             parent.style.setProperty("--y", `${window.scrollY}px`)
 
             // below code wouldn't worked, i hava no idea how could this happened
@@ -56,6 +45,25 @@ export default {
             //         "important"
             //     )
             // }
+        },
+
+        stopListenOutOfDom() {
+            const referenceImg = document.querySelector(
+                ".Parallax-item:last-child"
+            )
+
+            const observer = new IntersectionObserver(entries => {
+                const [{ isIntersecting }] = entries
+
+                if (isIntersecting)
+                    window.addEventListener("scroll", this.handleScroll, {
+                        capture: false,
+                        passive: true
+                    })
+                else window.removeEventListener("scroll", this.handleScroll)
+            })
+
+            observer.observe(referenceImg)
         }
     }
 }
@@ -66,8 +74,7 @@ export default {
     width: 100vw;
     height: 900px;
     --y: 0px;
-    --bgcolor: #2561ab;
-    background-color: var(--bgcolor);
+    background-color: var(--bgcolorFist);
 }
 
 #ParallaxContainer div {
