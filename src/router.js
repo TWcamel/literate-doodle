@@ -3,6 +3,7 @@ import Router from "vue-router"
 
 Vue.use(Router)
 
+import NavBar from "@/components/NavBar.vue"
 import MainPage from "@/pages/MainPage.vue"
 import Profolio from "@/pages/Profolio.vue"
 
@@ -15,6 +16,7 @@ export const router = new Router({
             name: "main-page",
             components: {
                 default: MainPage,
+                nav: NavBar
             },
             children: [
                 {

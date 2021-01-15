@@ -20,8 +20,8 @@ export default {
 
 <style scoped>
 #CoverImg {
-    width: 100vw;
-    height: 1300px;
+    width: var(--mainPageViewWidth);
+    height: 50em;
     background-position: center !important;
     background-size: cover !important;
 }

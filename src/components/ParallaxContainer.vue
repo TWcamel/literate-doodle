@@ -71,7 +71,7 @@ export default {
 
 <style scoped>
 #ParallaxContainer {
-    width: 100vw;
+    width: var(--mainPageViewWidth);
     height: 900px;
     --y: 0px;
     background-color: var(--bgcolorFist);
@@ -81,7 +81,7 @@ export default {
     background-position: center !important;
     background-size: cover !important;
     height: 900px;
-    width: 100%;
+    width: var(--mainPageViewWidth);
 }
 
 .Parallax-item:nth-child(1) {
