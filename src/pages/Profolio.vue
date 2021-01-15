@@ -12,7 +12,7 @@
                 {{ repo.description }}
             </p>
             <a id="Url" :href="repo.html_url">🔗 {{ repo.html_url }}</a>
-            <p id="UpdateTime" >
+            <p id="UpdateTime">
                 🕘 {{ repo.updated_at.replace(/T/i, " ⬆ ").split("Z")[0] }}
             </p>
         </div>
@@ -29,8 +29,9 @@ export default {
     data() {
         return {
             repos: [],
-            title: "Responsive Sidenav Example",
-            avatar: `https://avatars1.githubusercontent.com/u/37062662?s=460&u=f18540c67e83ea46bcdaa1c72b75c17aff1d80ce&v=4)`
+            title: "Responsive Example",
+            avatar:
+                "https://avatars2.githubusercontent.com/u/10137?s=460&u=b1951d34a583cf12ec0d3b0781ba19be97726318&v=4"
         }
     },
     components: { ParallaxContainer, CoverImg },
@@ -45,15 +46,18 @@ export default {
                             ? `🌟 ${ele.stargazers_count}`
                             : `✴ ${ele.stargazers_count}`
                 })
-                // console.log(this.repos)
             } catch (e) {
                 console.error(e)
             }
+        },
+        async updatePersonenlData() {
+            this.title = config.USER_NAME.toUpperCase()
+            this.avatar = config.USER_AVATAR
         }
     },
     async created() {
         await this.updateRepos()
-        this.title = config.USER_NAME.toUpperCase()
+        await this.updatePersonenlData()
     }
 }
 </script>
