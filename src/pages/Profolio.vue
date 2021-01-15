@@ -1,11 +1,16 @@
 <template>
     <div id="Profolio">
         <parallax-container />
-        <div id="StrokeContainer">
+        <landing-title/>
+
+        <div id="About">
             <img id="Avatar" :src="avatar" />
             <h1 id="Stroke">{{ title }}</h1>
+            <h2 id="Info" v-for="(item, idx) in info" :key="idx">{{ item }}</h2>
         </div>
+
         <cover-img />
+
         <div id="Repo" v-for="(repo, idx) in repos" :key="idx">
             📚 {{ repo.name }} {{ repo.stargazers_count }}
             <p id="Description">
@@ -23,6 +28,7 @@
 import ParallaxContainer from "../components/ParallaxContainer"
 import CoverImg from "../components/CoverImg"
 import repoService from "../services/repoService"
+import LandingTitle from '../components/LandingTitle.vue'
 import config from "../config.js"
 
 export default {
@@ -31,21 +37,24 @@ export default {
             repos: [],
             title: "Responsive Example",
             avatar:
-                "https://avatars2.githubusercontent.com/u/10137?s=460&u=b1951d34a583cf12ec0d3b0781ba19be97726318&v=4"
+                "https://avatars2.githubusercontent.com/u/10137?s=460&u=b1951d34a583cf12ec0d3b0781ba19be97726318&v=4",
+            info: "Info Example"
         }
     },
-    components: { ParallaxContainer, CoverImg },
+    components: { ParallaxContainer, CoverImg, LandingTitle },
     methods: {
         async updateRepos() {
             try {
                 const repos = await repoService.getRepos()
                 this.repos = repos.data
+                this.repos = await this.sortArr(this.repos)
                 this.repos.forEach(ele => {
                     ele.stargazers_count =
                         ele.stargazers_count > 0
                             ? `🌟 ${ele.stargazers_count}`
                             : `✴ ${ele.stargazers_count}`
                 })
+                // console.log(this.repos)
             } catch (e) {
                 console.error(e)
             }
@@ -53,6 +62,12 @@ export default {
         async updatePersonenlData() {
             this.title = config.USER_NAME.toUpperCase()
             this.avatar = config.USER_AVATAR
+            this.info = config.USER_INFO
+        },
+        async sortArr(ele) {
+            return ele
+                .sort((a, b) => a.stargazers_count - b.stargazers_count)
+                .reverse()
         }
     },
     async created() {
@@ -80,7 +95,7 @@ export default {
     justify-content: flex-start;
     align-content: center;
     flex-direction: column;
-    /* user-select: none; */
+    user-select: none;
     box-shadow: rgba(102, 96, 96, 0.52) 0px 0px 12px 0px;
     font: 1.8em "Titillium Web", sans-serif;
     letter-spacing: 0.2px;
@@ -103,10 +118,7 @@ export default {
 }
 
 #Stroke {
-    border: cornsilk;
-    border-style: outset;
     padding: 0.3em;
-    width: 9em;
     font-size: 3em;
     -webkit-text-stroke: 3px rgb(243, 228, 160);
     -webkit-text-fill-color: white;
@@ -123,16 +135,22 @@ export default {
     }
 }
 
-#StrokeContainer {
+#About {
     justify-content: center;
     align-items: center;
-    display: flex;
+    display: block;
     width: 100vw;
     background-color: var(--bgcolorFist);
 }
 
 #Avatar {
     width: 8em;
-    padding-right: 2em;
+    /* padding-right: 2em; */
 }
+
+#Info {
+    color: rgb(172, 172, 172);
+}
+
+
 </style>

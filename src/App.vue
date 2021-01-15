@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <router-view name="nav"/>
+        <router-view name="nav" />
         <router-view />
     </div>
 </template>
@@ -22,6 +22,7 @@ export default {
 
 #app {
     margin: 0;
+    padding-bottom: 3em;
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

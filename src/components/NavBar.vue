@@ -1,19 +1,20 @@
 <template>
     <ul id="SideNav">
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#repos">Repos</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a class="active" href="#app">Samuel Huang</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Repo">Repos</a></li>
+        <li><a href="https://github.com/TWcamel">Contact</a></li>
     </ul>
 </template>
 
 <script>
-export default {}
+export default {
+}
 </script>
 
 <style scoped>
 #SideNav {
-    top:5em;
+    top: 5em;
     list-style-type: none;
     width: var(--sideNavViewWidth);
     margin: 0;
