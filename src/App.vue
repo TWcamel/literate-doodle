@@ -21,15 +21,12 @@ export default {
 }
 
 #app {
-    margin: 0;
-    padding-bottom: 3em;
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
     background-color: var(--bgcolorSecond);
-    margin-left: -.5vw;
     display: contents;
     width: var(--mainPageViewWidth);
 }

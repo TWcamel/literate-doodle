@@ -68,6 +68,9 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--bgcolorSecond);
+    padding-bottom: 3em;
+    margin: 0px -10px;
 }
 
 #Repo {
@@ -101,5 +104,4 @@ export default {
     text-decoration: none;
     color: grey;
 }
-
 </style>
