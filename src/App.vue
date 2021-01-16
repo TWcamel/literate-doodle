@@ -30,6 +30,7 @@ export default {
     color: #2c3e50;
     background-color: var(--bgcolorSecond);
     margin-left: -.5vw;
+    display: contents;
     width: var(--mainPageViewWidth);
 }
 
