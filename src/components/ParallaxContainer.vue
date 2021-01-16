@@ -60,7 +60,9 @@ export default {
                         capture: false,
                         passive: true
                     })
-                else window.removeEventListener("scroll", this.handleScroll)
+                else {
+                    window.removeEventListener("scroll", this.handleScroll)
+                    }
             })
 
             observer.observe(referenceImg)
@@ -86,12 +88,12 @@ export default {
 }
 
 .Parallax-item:nth-child(1) {
-    transform: translateY(calc(var(--y) * -0.67));
+    transform: translateY(calc(var(--y) * -0.03));
     z-index: 1;
 }
 
 .Parallax-item:nth-child(2) {
-    transform: translateY(calc(var(--y) * -0.6));
+    transform: translateY(calc(var(--y) * -0.02));
     z-index: 2;
 }
 
@@ -101,12 +103,12 @@ export default {
 }
 
 .Parallax-item:nth-child(4) {
-    transform: translateY(calc(var(--y) * -0.46));
+    transform: translateY(calc(var(--y) * -0.66));
     z-index: 4;
 }
 
 .Parallax-item:nth-child(5) {
-    transform: translateY(calc(var(--y) * -0.39));
+    transform: translateY(calc(var(--y) * -0.36));
     z-index: 5;
 }
 
