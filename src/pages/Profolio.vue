@@ -102,17 +102,4 @@ export default {
     color: grey;
 }
 
-/* @media screen and (max-width: 501px) {
-    #Repo {
-        padding: 10px 80px;
-        width: 90vw;
-    }
-}
-
-@media screen and (max-width: 356px) { 
-    #Repo {
-        padding: 10px 60px;
-        width: var(--RWDRepos);
-    } */
-/* } */
 </style>

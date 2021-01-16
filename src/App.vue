@@ -17,6 +17,7 @@ export default {
     --bgcolorFist: #255ba0;
     --bgcolorSecond: #dddbd7;
     --mainPageViewWidth: 100vw;
+    --rwdTitleSize: 2.3em;
 }
 
 #app {
