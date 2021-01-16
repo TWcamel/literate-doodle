@@ -5,11 +5,7 @@
 </template>
 
 <style scoped>
-
-@media screen and (max-width: 900px) {
-    #main-page {
-        width: var(--RWDViewWidth);
-        margin-left: 0;
-    }
+#main-page {
+    width: var(--mainPageViewWidth);
 }
 </style>
