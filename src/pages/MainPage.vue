@@ -6,6 +6,5 @@
 
 <style scoped>
 #main-page {
-    width: var(--mainPageViewWidth);
 }
 </style>
