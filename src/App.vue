@@ -27,8 +27,10 @@ export default {
     text-align: center;
     color: #2c3e50;
     background-color: var(--bgcolorSecond);
-    display: contents;
     width: var(--mainPageViewWidth);
+    margin: 0;
+    padding-bottom: 3em;
+    margin: 0px -10px;
 }
 
 /* @media screen and (max-width: 900px) {

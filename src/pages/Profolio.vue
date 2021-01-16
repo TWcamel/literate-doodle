@@ -69,8 +69,6 @@ export default {
     align-items: center;
     flex-direction: column;
     background-color: var(--bgcolorSecond);
-    padding-bottom: 3em;
-    margin: 0px -10px;
 }
 
 #Repo {
