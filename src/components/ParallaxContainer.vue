@@ -78,6 +78,7 @@ export default {
 }
 
 #ParallaxContainer div {
+    top:0;
     background-position: center !important;
     background-size: cover !important;
     height: 900px;
@@ -114,12 +115,4 @@ export default {
     will-change: transform;
 }
 
-@media screen and (max-width: 900px) {
-    #ParallaxContainer {
-        width: var(--RWDViewWidth);
-    }
-    #ParallaxContainer div {
-        width: var(--RWDViewWidth);
-    }
-}
 </style>

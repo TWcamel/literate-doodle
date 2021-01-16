@@ -71,9 +71,9 @@ export default {
 }
 
 #Repo {
-    width: 500px;
+    width: 50vw;
     background-color: #fff;
-    padding: 10px 255px;
+    padding: 10px 10vw;
     margin-top: 20px;
     border-radius: 6px;
     display: flex;
@@ -102,15 +102,17 @@ export default {
     color: grey;
 }
 
-@media screen and (max-width: 501px) {
+/* @media screen and (max-width: 501px) {
     #Repo {
-        padding: 10px 100px;
+        padding: 10px 80px;
+        width: 90vw;
     }
 }
 
 @media screen and (max-width: 356px) { 
     #Repo {
         padding: 10px 60px;
-    }
-}
+        width: var(--RWDRepos);
+    } */
+/* } */
 </style>

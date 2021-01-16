@@ -52,22 +52,22 @@ export default {
 
 @media screen and (max-width: 900px) {
     #SideNav {
-        width: 100vh;
+        width: auto;
         height: auto;
         position: relative;
-        padding-left: 50vw;
+        right: 0;
     }
 
     #SideNav >>> li a {
-        float: left;
+        float: right;
         padding: 16px;
     }
 }
 
-/* @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
     #SideNav >>> li a {
         text-align: center;
         float: none;
-    } */
-/* } */
+    } 
+}
 </style>

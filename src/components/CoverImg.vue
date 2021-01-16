@@ -25,9 +25,4 @@ export default {
     background-size: cover !important;
 }
 
-@media screen and (max-width: 900px) {
-    #CoverImg {
-        width: var(--RWDViewWidth);
-    }
-}
 </style>
